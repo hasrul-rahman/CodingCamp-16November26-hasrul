@@ -1,0 +1,434 @@
+/* CSS Variables for Light Theme */
+:root {
+    --primary-color: #4a90d9;
+    --primary-hover: #357abd;
+    --secondary-color: #6c757d;
+    --secondary-hover: #5a6268;
+    --tertiary-color: #dc3545;
+    --tertiary-hover: #c82333;
+    --bg-color: #f5f5f5;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --text-secondary: #666666;
+    --border-color: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --success-color: #28a745;
+    --error-color: #dc3545;
+}
+
+/* Dark Theme Variables */
+.dark-theme {
+    --primary-color: #5a9eeb;
+    --primary-hover: #4a8bd6;
+    --secondary-color: #788290;
+    --secondary-hover: #6a737d;
+    --tertiary-color: #e4666f;
+    --tertiary-hover: #d64552;
+    --bg-color: #1a1a2e;
+    --card-bg: #16213e;
+    --text-color: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --border-color: #2d2d44;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Greeting Section */
+.greeting-section {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.greeting {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.datetime {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+/* Theme Toggle */
+.theme-toggle-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Section Styles */
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: var(--secondary-hover);
+}
+
+.btn-tertiary {
+    background-color: var(--tertiary-color);
+    color: white;
+}
+
+.btn-tertiary:hover {
+    background-color: var(--tertiary-hover);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="url"],
+input[type="number"] {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Timer Section */
+.timer-section {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    text-align: center;
+}
+
+.timer-label {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+.timer-display {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 20px 0;
+    color: var(--primary-color);
+}
+
+.timer-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.timer-controls input[type="number"] {
+    width: 100px;
+    text-align: center;
+}
+
+/* User Settings Section */
+.user-settings-section {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.settings-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.settings-input input {
+    flex: 1;
+}
+
+/* To-Do List Section */
+.todo-section {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.todo-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.todo-input input {
+    flex: 1;
+}
+
+.todo-sort {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.task-list {
+    list-style: none;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.task-item:hover {
+    background-color: var(--border-color);
+}
+
+.task-item.completed .task-name {
+    text-decoration: line-through;
+    color: var(--text-secondary);
+}
+
+.task-item input[type="checkbox"] {
+    margin-right: 15px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.task-name {
+    flex: 1;
+    font-size: 1rem;
+}
+
+.task-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.task-edit-btn,
+.task-delete-btn {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+}
+
+.task-edit-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.task-edit-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.task-delete-btn {
+    background-color: var(--tertiary-color);
+    color: white;
+}
+
+.task-delete-btn:hover {
+    background-color: var(--tertiary-hover);
+}
+
+/* Quick Links Section */
+.quick-links-section {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.links-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.links-input input {
+    flex: 1;
+    min-width: 200px;
+}
+
+.link-list {
+    list-style: none;
+}
+
+.link-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.link-item:hover {
+    background-color: var(--border-color);
+}
+
+.link-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+    flex: 1;
+    font-size: 1rem;
+}
+
+.link-item a:hover {
+    text-decoration: underline;
+}
+
+.link-delete-btn {
+    background-color: var(--tertiary-color);
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.link-delete-btn:hover {
+    background-color: var(--tertiary-hover);
+}
+
+/* Error Messages */
+.error-message {
+    color: var(--error-color);
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .greeting {
+        font-size: 1.8rem;
+    }
+
+    .timer-display {
+        font-size: 3rem;
+    }
+
+    .main-content {
+        padding: 0 15px;
+    }
+
+    .settings-input,
+    .todo-input,
+    .todo-sort,
+    .links-input {
+        flex-direction: column;
+    }
+
+    .task-actions {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .greeting {
+        font-size: 1.5rem;
+    }
+
+    .timer-display {
+        font-size: 2.5rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .timer-controls {
+        flex-direction: column;
+    }
+
+    .timer-controls input[type="number"] {
+        width: 100%;
+    }
+}
