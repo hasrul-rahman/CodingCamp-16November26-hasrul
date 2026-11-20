@@ -5,29 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro Timer</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4a90d9">
 </head>
 <body>
-    <header class="greeting-section">
-        <h1 class="greeting">Hello, <span id="user-name-display"></span>!</h1>
-        <p class="datetime" id="datetime-display"></p>
+    <header class="greeting-section" role="banner">
+        <h1 class="greeting" id="greeting-text" aria-live="polite">Hello, <span id="user-name-display"></span>!</h1>
+        <p class="datetime" id="datetime-display" aria-live="polite"></p>
     </header>
 
     <main class="main-content">
         <section class="theme-toggle-container">
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark theme">
                 <span class="theme-icon" id="theme-icon">☀️</span>
                 <span class="theme-text" id="theme-text">Light</span>
             </button>
         </section>
 
-        <section class="timer-section">
-            <h2 class="timer-label">Pomodoro Timer</h2>
-            <div class="timer-display" id="timer-display">25:00</div>
+        <section class="timer-section" aria-labelledby="timer-heading">
+            <h2 id="timer-heading" class="timer-label">Focus Timer</h2>
+            <div class="timer-display-container">
+                <span id="timer-display" class="timer-display" role="timer" aria-live="assertive" aria-atomic="true">25:00</span>
+            </div>
             <div class="timer-controls">
-                <input type="number" id="duration-input" min="1" max="120" value="25" placeholder="Minutes">
-                <button id="start-btn" class="btn btn-primary">Start</button>
-                <button id="stop-btn" class="btn btn-secondary" disabled>Stop</button>
-                <button id="reset-btn" class="btn btn-secondary">Reset</button>
+                <label for="duration-input" class="timer-label">Duration (minutes):</label>
+                <input type="number" id="duration-input" min="1" max="120" value="25" aria-describedby="duration-hint">
+                <span id="duration-hint" class="timer-hint">1-120 minutes</span>
+                <button id="start-btn" class="btn btn-primary" aria-label="Start the timer">Start</button>
+                <button id="stop-btn" class="btn btn-secondary" disabled aria-label="Stop the timer">Stop</button>
+                <button id="reset-btn" class="btn btn-secondary" aria-label="Reset the timer">Reset</button>
             </div>
         </section>
 
@@ -46,7 +53,7 @@
                 <input type="text" id="task-input" placeholder="Add a new task">
                 <button id="add-task-btn" class="btn btn-primary">Add</button>
             </div>
-            <div class="todo-sort">
+            <div class="task-controls">
                 <button id="sort-date-desc-btn" class="btn btn-secondary">Newest First</button>
                 <button id="sort-date-asc-btn" class="btn btn-secondary">Oldest First</button>
                 <button id="sort-completed-btn" class="btn btn-secondary">Completed First</button>
@@ -54,14 +61,14 @@
             <ul class="task-list" id="task-list"></ul>
         </section>
 
-        <section class="quick-links-section">
-            <h2 class="section-title">Quick Links</h2>
+        <section class="quick-links-section" aria-labelledby="quick-links-heading">
+            <h2 id="quick-links-heading" class="section-title">Quick Links</h2>
             <div class="links-input">
-                <input type="text" id="link-label-input" placeholder="Label (optional)">
-                <input type="url" id="link-url-input" placeholder="Enter URL">
+                <input type="text" id="link-label-input" placeholder="Label (optional)" maxlength="50">
+                <input type="url" id="link-url-input" placeholder="Enter URL" required>
                 <button id="add-link-btn" class="btn btn-primary">Add Link</button>
             </div>
-            <ul class="link-list" id="link-list"></ul>
+            <ul class="link-list" id="link-list" role="list"></ul>
         </section>
     </main>
 
